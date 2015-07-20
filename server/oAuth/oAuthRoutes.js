@@ -1,8 +1,7 @@
 var oAuthController = require('./oAuthController.js');
 var passport = require('passport');
-var QuickBooks = require('../../node_modules/node-quickbooks/index.js');
-var Firebase = require("firebase");
-var myFirebaseRef = new Firebase("https://bizgramer.firebaseio.com/hr/BizData");
+var QuickBooks = require('node-quickbooks');
+
 
 module.exports = function(app) {
 
@@ -14,11 +13,16 @@ module.exports = function(app) {
     res.render('login', { user: req.user });
   });
 
+  app.get('/auth/intuit', passport.authenticate('intuit'),
+    function(req, res) {
+
+  } );
+
   app.get('/auth/intuit/callback',
     passport.authenticate('intuit', { failureRedirect: '/login' }),
      function(req, res) {
         console.log("Successful LOGIN YAY!");
-        res.redirect('/');
+        res.redirect('/#/signin');
     }
   );
 
