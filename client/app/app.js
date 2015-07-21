@@ -11,8 +11,6 @@ var app = angular.module('bizGramApp', [
 	'uploadFactory',
 	'visualFactory',
 	'mainCtrl',
-	'aRVisualCtrl',
-	'aPVisualCtrl',
 	'visualReplyCtrl',
 	'authCtrl',
 	'directMessageCtrl',
