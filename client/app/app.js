@@ -23,7 +23,6 @@ var app = angular.module('bizGramApp', [
 	'ui.router',
 	'angularMoment'
 	]);
-
 app.config(function ($stateProvider, $urlRouterProvider) {
 
 	// need to dynamically create routes based on the rooms available
